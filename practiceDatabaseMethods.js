@@ -46,4 +46,13 @@ async function getAllRecipes(){
 }
 getAllRecipes()
 
-
+async function getRecipeById(id){
+    try{
+       const foundRecipe = await Recipe.findById(id);
+       console.log(foundRecipe)
+    }
+    catch(err){
+        console.log('No recipe with this ID exists.')
+    }
+}
+getRecipeById('6a984eb54cbaa76a33ae2aaf')
