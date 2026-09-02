@@ -57,7 +57,7 @@ async function getRecipeById(id){
 }
 getRecipeById('6a984eb54cbaa76a33ae2aaf')
 
-/*async function updateRecipe(recipeId, newRecipeData)
+async function updateRecipe(recipeId, newRecipeData)
 {
     try{
        const updatedRecipe = await Recipe.findByIdAndUpdate(recipeId,newRecipeData,{new:true});
@@ -66,4 +66,23 @@ getRecipeById('6a984eb54cbaa76a33ae2aaf')
     catch(err){
         console.log('Recipe dose not updated for some reason')
     }
-}*/
+}
+const newRecipe = {
+            name:'FriedTomatoooooo',
+            instructions: ['put oil','turn on the fire','burn it'],
+            prepTime: 1,
+            difficulty:'Hard'
+        }
+updateRecipe('6a984eb54cbaa76a33ae2aaf',newRecipe)
+
+async function deleteRecipe(recipeId)
+{
+    try{
+       const deletedRecipe = await Recipe.findByIdAndDelete(recipeId);
+       console.log("Recipe successfully deleted.")
+    }
+    catch(err){
+        console.log('Recipe dose not deleted for some reason')
+    }
+}
+deleteRecipe('6a984eb54cbaa76a33ae2aaf')        
