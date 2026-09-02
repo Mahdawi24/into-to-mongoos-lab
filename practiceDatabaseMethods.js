@@ -56,3 +56,14 @@ async function getRecipeById(id){
     }
 }
 getRecipeById('6a984eb54cbaa76a33ae2aaf')
+
+/*async function updateRecipe(recipeId, newRecipeData)
+{
+    try{
+       const updatedRecipe = await Recipe.findByIdAndUpdate(recipeId,newRecipeData,{new:true});
+       console.log(updatedRecipe)
+    }
+    catch(err){
+        console.log('Recipe dose not updated for some reason')
+    }
+}*/
